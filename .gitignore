@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+
+# Backup of pre-rewrite git history
+.git.bak/
+
+# IDE
+.idea/
+*.iml
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Large input data (not tracked in this repo)
+input/
+
+# Other output artifacts (only the .vdb is tracked)
+output/*.vtk
+
+# Old/experimental code
+misc/
