@@ -4,11 +4,11 @@ Converts unstructured tokamak simulation grids into uniform voxel grids, then ex
 
 This code was developed as part of the following paper:
 
-> **AI-Machine Learning-Enabled Tokamak Digital Twin**
-> William Tang, Eliot Feibush, Ge Dong, Noah Borthwick, Apollo Lee, Juan-Felipe Gomez, Tom Gibbs, John Stone, Peter Messmer, Jack Wells, Xishuo Wei, Zhihong Lin
-> 29th IAEA Fusion Energy Conference (FEC 2023)
-> arXiv:2409.03112 [physics.comp-ph]
-> https://doi.org/10.48550/arXiv.2409.03112
+> **AI-Machine Learning-Enabled Tokamak Digital Twin** <br>
+> William Tang, Eliot Feibush, Ge Dong, Noah Borthwick, Apollo Lee, Juan-Felipe Gomez, Tom Gibbs, John Stone, Peter Messmer, Jack Wells, Xishuo Wei, Zhihong Lin <br>
+> 29th IAEA Fusion Energy Conference (FEC 2023) <br>
+> arXiv:2409.03112 [physics.comp-ph] <br>
+> https://doi.org/10.48550/arXiv.2409.03112 <br>
 
 ## Background
 
