@@ -10,9 +10,6 @@ import cProfile
 import pstats
 from io import StringIO
 
-# See regridExplain.txt for context and usage directions.
-# WRITTEN BY APOLLO LEE [apollo1@stanford.edu]
-
 # Sections:
 # 1.  Init
 # 2.  Reading
