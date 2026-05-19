@@ -20,7 +20,7 @@ A companion program, `splineModel.py`, processes output from the Gyrokinetic Tok
 
 ### Reading
 
-The input is a binary unstructured-grid VTK file (binary is far faster and smaller than ASCII). Using `vtkUnstructuredGridReader`, the program extracts:
+The input is a binary unstructured-grid VTK file (binary is much faster and smaller than ASCII). Using `vtkUnstructuredGridReader`, the program extracts:
 
 - **Points**, each with coordinates and a `phi` value, stored as `(x, y, z, p)`. A full torus contains roughly 7.7 million points.
 - **Wedges**, the grid cells. Each is a 6-vertex prism with 6 associated `phi` values.
@@ -31,7 +31,7 @@ The voxel grid is a PyVista `StructuredGrid` whose dimensions match the bounding
 
 ### Processing: wedges to voxels
 
-The program resamples the irregular wedge grid onto a uniform voxel grid. This involves a few approximations worth stating clearly.
+The program resamples the irregular wedge grid onto a uniform voxel grid. This involves a few approximations.
 
 For each wedge:
 
@@ -51,7 +51,7 @@ The `phi` array is initialized to `NaN` so that empty voxels stay distinguishabl
 
 VTK files are dense: they allocate memory for every potential data point. OpenVDB uses a hierarchical structure that only allocates memory for active voxels, which produces large savings. The conversion creates an OpenVDB grid matching the voxel-grid dimensions, copies over every voxel with a non-`NaN` `phi`, and saves.
 
-Note: OpenVDB is natively a C++ library. The Python binding (`pyopenvdb`) is poorly maintained, lacks features, and cannot be installed through `pip` or `conda`. A few quirks remain unresolved. For example, a `FloatGrid` did not render correctly in some viewers while a `LevelSetSphere` did, so the current code builds a sphere grid and overwrites voxel values onto it as a workaround.
+Note: OpenVDB is natively a C++ library. The Python binding (`pyopenvdb`) is poorly maintained and lacks features. A few quirks remain unresolved. For example, a `FloatGrid` did not render correctly in some viewers while a `LevelSetSphere` did, so the current code builds a sphere grid and overwrites voxel values onto it as a workaround.
 
 ### Visualization
 
@@ -60,7 +60,7 @@ Note: OpenVDB is natively a C++ library. The Python binding (`pyopenvdb`) is poo
 | `.vtk`    | VisIt, ParaView |
 | `.vdb`    | ParaView, Blender, Houdini |
 
-The `visualize()` function opens an external PyVista window. Comment out the call in `run()` if you don't need it.
+The `visualize()` function opens an external PyVista window.
 
 ## Files
 
